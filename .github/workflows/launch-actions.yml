@@ -29,7 +29,6 @@ jobs:
       - name: Setting up Environment...
         run:  |
           pip install uv
-          uv install
           uv sync
 
       # Runs a set of commands using the runners shell
