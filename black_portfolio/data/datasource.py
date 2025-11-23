@@ -1,0 +1,227 @@
+from datetime import date
+from typing import List
+from black_portfolio.data_models import *
+from black_portfolio.utils import sort_skills_by_level
+
+
+class DataSource_provider:
+    _instance = None
+
+    def __init__(self):
+        if self._instance is not None:
+            return
+        else:
+            self._instance = self.generate_portfolio()
+
+    def get_instance(self):
+        return self._instance if self._instance else self.__init__()
+
+    def generate_portfolio(self) -> Portfolio:
+        _name = "Shantanu Bindhani"
+        _role = "SDE / Backend Developer / Software Engineer"
+        _bio = [
+            "Aspiring Software Developer from Balasore, Orissa, India.",
+            "Experienced in backend development, microservices, and Android development.",
+            "Skilled in Python, Java, Kotlin, and fastAPI among other technologies."
+        ]
+        _links = self.get_links()
+        _contacts = self.get_contacts()
+        _experiences = self.get_experiences()
+        _projects = self.get_projects()
+        _educations = self.get_educations()
+        _skills = self.get_skills()
+        _certifications = self.get_certifications()
+
+        _portfolio = Portfolio(
+            name=_name,
+            role=_role,
+            bio=_bio,
+            links=_links,
+            contacts=_contacts,
+            experiences=_experiences,
+            projects=_projects,
+            educations=_educations,
+            skills=_skills,
+            certifications=_certifications,
+        )
+
+        return _portfolio
+
+    def get_links(self) -> List[Link]:
+        return [
+            Link(url="https://linkedin.com/in/shantanubindhani", label="LinkedIn"),
+            Link(url="https://github.com/shantanubindhani", label="GitHub"),
+        ]
+
+    def get_contacts(self) -> List[Contact]:
+        return [
+            Contact(detail="shantanubindhani1805@gmail.com", type=ContactType.EMAIL),
+            Contact(detail="+91-8917322838", type=ContactType.PHONE),
+        ]
+
+    def get_experiences(self) -> List[Experience]:
+        return [
+            Experience(
+                role="Backend SDE Intern",
+                company="Datachecks, Bangalore",
+                start_date=date(2024, 11, 1),
+                end_date=date(2025, 4, 30),
+                responsibilities=[
+                    "Created and improved various features and integrations using python, fastAPI, SQL Alchemy, Celery, PostgreSQL.",
+                    "Wrote Unit tests, Integration and Repository tests using Pytest.",
+                    "Used singleton architecture, dependency injections, and system design to improve efficiency and load times.",
+                    "Maintained API health and test coverage using sentry and codecov.",
+                    "Collaborated with a small qualified team on end-to-end feature development."
+                ],
+                learnings=[
+                    "Advanced backend design patterns and testing for scalable APIs."
+                ],
+            ),
+            Experience(
+                role="Software Development Engineer Intern",
+                company="Ciright Inc., Ahmedabad",
+                start_date=date(2023, 1, 1),
+                end_date=date(2023, 6, 30),
+                responsibilities=[
+                    "Developed and maintained 30+ business verticals for Ciright.com & Veuit.com using Java and Microservices.",
+                    "Implemented JRXML, Spring Boot 3, and multithreading improving system efficiency by 20%."
+                ],
+                learnings=[
+                    "Experience with large scale Java microservices and report generation."
+                ],
+            ),
+        ]
+
+    def get_projects(self) -> List[Project]:
+        return [
+            Project(
+                name="Expense Tracker",
+                description="Android app to track daily and monthly expenses using Kotlin, Jetpack Compose, MVVM, Room-DB, Coroutines.",
+                technologies=["Kotlin", "Jetpack Compose", "MVVM", "Room-DB", "Coroutines"],
+                link="https://github.com/shantanubindhani/Expense-tracker",
+            ),
+            Project(
+                name="Melodic Hues",
+                description="Web app recommending songs based on facial expressions using Deep Learning and Flask, supporting multiple languages.",
+                technologies=["Python", "Flask", "CNN", "Deep Learning"],
+                link="https://github.com/shantanubindhani/Melodic-Hues",
+            ),
+        ]
+
+    def get_educations(self) -> List[Education]:
+        return [
+            Education(
+                degree="Masters in Computer Applications",
+                grade=Grade(score=8.68, scale=10.0),
+                institution="Lovely Professional University, Punjab",
+                graduation_date=date(2025, 5, 1),
+                additional_info=None,
+            ),
+            Education(
+                degree="Bachelors in Computer Application",
+                grade=Grade(score=8.75, scale=10.0),
+                institution="Rai University, Ahmedabad",
+                graduation_date=date(2023, 5, 1),
+                additional_info=None,
+            ),
+        ]
+    def get_skills(self) -> List[Skill]:
+        _skills = [
+            Skill(name="Python", type=SkillType.LANGUAGE, level=SkillLevel.EXPERT),
+            Skill(name="C++", type=SkillType.LANGUAGE, level=SkillLevel.ADVANCED),
+            Skill(name="Java", type=SkillType.LANGUAGE, level=SkillLevel.ADVANCED),
+            Skill(name="Kotlin", type=SkillType.LANGUAGE, level=SkillLevel.BEGINNER),
+            Skill(name="JavaScript", type=SkillType.LANGUAGE, level=SkillLevel.INTERMEDIATE),
+            Skill(name="SQL", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(name="Git", type=SkillType.TOOL, level=SkillLevel.EXPERT),
+            Skill(name="BASH", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
+            Skill(name="FastAPI", type=SkillType.FRAMEWORK, level=SkillLevel.ADVANCED),
+            Skill(name="Spring Boot", type=SkillType.FRAMEWORK, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Docker", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Kubernetes", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
+            Skill(name="Celery", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
+            Skill(name="PostgreSQL", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(name="REST APIs", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(name="Microservices", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(name="JUnit", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
+            Skill(name="JWTAuth", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Android Development", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
+            Skill(name="Jetpack Compose", type=SkillType.FRAMEWORK, level=SkillLevel.BEGINNER),
+            Skill(name="Coroutines", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
+            Skill(name="Flask", type=SkillType.FRAMEWORK, level=SkillLevel.INTERMEDIATE),
+            Skill(name="CNN", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
+            Skill(name="Deep Learning", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
+            Skill(name="Pytest", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
+            Skill(name="System Design", type=SkillType.CONCEPT, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Multiprocessing", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Sentry", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
+            Skill(name="Codecov", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
+            Skill(name="Python-Typing", type=SkillType.CONCEPT, level=SkillLevel.BEGINNER),
+            Skill(name="Data Structures & Algorithms", type=SkillType.CONCEPT, level=SkillLevel.ADVANCED),
+            Skill(name="OOPs Concepts", type=SkillType.CONCEPT, level=SkillLevel.EXPERT),
+            Skill(name="Design Patterns", type=SkillType.CONCEPT, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Agile", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Scrum", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Unit Testing", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Integration Testing", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Repository Testing", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Multithreading", type=SkillType.CONCEPT, level=SkillLevel.BEGINNER),
+            Skill(name="JRXML", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="CI/CD", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Github Workflows", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
+            Skill(name="Linux", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(name="VS Code", type=SkillType.TOOL, level=SkillLevel.EXPERT),
+            Skill(name="Eclipse", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
+            Skill(name="Android Studio", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
+            Skill(name="Postman", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
+            Skill(name="DBeaver", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
+            Skill(name="C#", type=SkillType.LANGUAGE, level=SkillLevel.BEGINNER),
+            Skill(name="HTML/CSS", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(name="ReactJS", type=SkillType.FRAMEWORK, level=SkillLevel.BEGINNER),
+            Skill(name="GitHub", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
+        ]
+
+
+        return sort_skills_by_level(_skills)
+
+    def get_certifications(self) -> List[Certification]:
+        return [
+            Certification(
+                name="Java (Basic) Certificate",
+                organization="Hackerrank",
+                issue_date=date(2024, 8, 1),
+                expiration_date=None,
+                url="https://www.hackerrank.com/certificates/3fbe9c798cd2",
+            ),
+            Certification(
+                name="Software Engineer Certificate",
+                organization="Hackerrank",
+                issue_date=date(2024, 8, 1),
+                expiration_date=None,
+                url="https://www.hackerrank.com/certificates/3760edda3156",
+            ),
+            Certification(
+                name="Mastering Android Development with Kotlin From Beginner to Pro Certification",
+                organization="GFG",
+                issue_date=date(2024, 6, 1),
+                expiration_date=date(2024, 7, 31),
+                url="https://www.geeksforgeeks.org/certificate/bdb05332ac99bedba18c420cbb25445f",
+            ),
+            Certification(
+                name="Jetpack Compose & Kotlin & Java for Android App Development Certification",
+                organization="Udemy",
+                issue_date=date(2024, 4, 1),
+                expiration_date=date(2024, 7, 31),
+                url="https://www.udemy.com/certificate/UC-f88e1672-eaa9-4442-a3aa-e07c0f69468c/",
+            ),
+            Certification(
+                name="The Complete Python Developer Certification",
+                organization="Udemy",
+                issue_date=date(2024, 1, 1),
+                expiration_date=date(2024, 6, 30),
+                url="https://www.udemy.com/certificate/UC-0096b90f-42cf-4135-9b89-947b437d09bd/",
+            ),
+        ]
+
+
+portfolio = DataSource_provider().get_instance()
