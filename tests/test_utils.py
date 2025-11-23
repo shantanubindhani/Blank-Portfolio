@@ -6,6 +6,7 @@ from black_portfolio.data_models import Skill, SkillLevel, SkillType
 from black_portfolio.utils import sort_skills_by_level, filter_skills
 from tests.test_data import sample_skills
 
+
 def test_should_sort_skills_by_level_correctly(sample_skills):
     sorted_skills = sort_skills_by_level(sample_skills)
     levels = [skill.level for skill in sorted_skills]
@@ -41,7 +42,9 @@ def test_should_filter_skills_by_levels_properly(sample_skills):
 
 
 def test_should_filter_skills_by_names_and_levels_together(sample_skills):
-    filtered = filter_skills(sample_skills, names=["skill3", "skill4"], levels=["INTERMEDIATE"])
+    filtered = filter_skills(
+        sample_skills, names=["skill3", "skill4"], levels=["INTERMEDIATE"]
+    )
     filtered_names = sorted([skill.name for skill in filtered])
     expected_names = ["skill3"]
     assert filtered_names == expected_names
