@@ -1,7 +1,7 @@
 from datetime import date
 from typing import List
-from black_portfolio.data_models import *
-from black_portfolio.utils import sort_skills_by_level
+from blank_portfolio.data_models import *
+from blank_portfolio.utils import sort_skills_by_level
 
 
 class DataSource_provider:
@@ -22,7 +22,7 @@ class DataSource_provider:
         _bio = [
             "Aspiring Software Developer from Balasore, Orissa, India.",
             "Experienced in backend development, microservices, and Android development.",
-            "Skilled in Python, Java, Kotlin, and fastAPI among other technologies."
+            "Skilled in Python, Java, Kotlin, and fastAPI among other technologies.",
         ]
         _links = self.get_links()
         _contacts = self.get_contacts()
@@ -71,7 +71,7 @@ class DataSource_provider:
                     "Wrote Unit tests, Integration and Repository tests using Pytest.",
                     "Used singleton architecture, dependency injections, and system design to improve efficiency and load times.",
                     "Maintained API health and test coverage using sentry and codecov.",
-                    "Collaborated with a small qualified team on end-to-end feature development."
+                    "Collaborated with a small qualified team on end-to-end feature development.",
                 ],
                 learnings=[
                     "Advanced backend design patterns and testing for scalable APIs."
@@ -84,7 +84,7 @@ class DataSource_provider:
                 end_date=date(2023, 6, 30),
                 responsibilities=[
                     "Developed and maintained 30+ business verticals for Ciright.com & Veuit.com using Java and Microservices.",
-                    "Implemented JRXML, Spring Boot 3, and multithreading improving system efficiency by 20%."
+                    "Implemented JRXML, Spring Boot 3, and multithreading improving system efficiency by 20%.",
                 ],
                 learnings=[
                     "Experience with large scale Java microservices and report generation."
@@ -97,7 +97,13 @@ class DataSource_provider:
             Project(
                 name="Expense Tracker",
                 description="Android app to track daily and monthly expenses using Kotlin, Jetpack Compose, MVVM, Room-DB, Coroutines.",
-                technologies=["Kotlin", "Jetpack Compose", "MVVM", "Room-DB", "Coroutines"],
+                technologies=[
+                    "Kotlin",
+                    "Jetpack Compose",
+                    "MVVM",
+                    "Room-DB",
+                    "Coroutines",
+                ],
                 link="https://github.com/shantanubindhani/Expense-tracker",
             ),
             Project(
@@ -125,62 +131,146 @@ class DataSource_provider:
                 additional_info=None,
             ),
         ]
+
     def get_skills(self) -> List[Skill]:
         _skills = [
             Skill(name="Python", type=SkillType.LANGUAGE, level=SkillLevel.EXPERT),
             Skill(name="C++", type=SkillType.LANGUAGE, level=SkillLevel.ADVANCED),
             Skill(name="Java", type=SkillType.LANGUAGE, level=SkillLevel.ADVANCED),
             Skill(name="Kotlin", type=SkillType.LANGUAGE, level=SkillLevel.BEGINNER),
-            Skill(name="JavaScript", type=SkillType.LANGUAGE, level=SkillLevel.INTERMEDIATE),
+            Skill(
+                name="JavaScript",
+                type=SkillType.LANGUAGE,
+                level=SkillLevel.INTERMEDIATE,
+            ),
             Skill(name="SQL", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
             Skill(name="Git", type=SkillType.TOOL, level=SkillLevel.EXPERT),
             Skill(name="BASH", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
             Skill(name="FastAPI", type=SkillType.FRAMEWORK, level=SkillLevel.ADVANCED),
-            Skill(name="Spring Boot", type=SkillType.FRAMEWORK, level=SkillLevel.INTERMEDIATE),
+            Skill(
+                name="Spring Boot",
+                type=SkillType.FRAMEWORK,
+                level=SkillLevel.INTERMEDIATE,
+            ),
             Skill(name="Docker", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
             Skill(name="Kubernetes", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
             Skill(name="Celery", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
-            Skill(name="PostgreSQL", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
-            Skill(name="REST APIs", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
-            Skill(name="Microservices", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(
+                name="PostgreSQL", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED
+            ),
+            Skill(
+                name="REST APIs", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED
+            ),
+            Skill(
+                name="Microservices",
+                type=SkillType.TECHNOLOGY,
+                level=SkillLevel.ADVANCED,
+            ),
             Skill(name="JUnit", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
-            Skill(name="JWTAuth", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Android Development", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
-            Skill(name="Jetpack Compose", type=SkillType.FRAMEWORK, level=SkillLevel.BEGINNER),
-            Skill(name="Coroutines", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
-            Skill(name="Flask", type=SkillType.FRAMEWORK, level=SkillLevel.INTERMEDIATE),
+            Skill(
+                name="JWTAuth", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE
+            ),
+            Skill(
+                name="Android Development",
+                type=SkillType.TECHNOLOGY,
+                level=SkillLevel.BEGINNER,
+            ),
+            Skill(
+                name="Jetpack Compose",
+                type=SkillType.FRAMEWORK,
+                level=SkillLevel.BEGINNER,
+            ),
+            Skill(
+                name="Coroutines", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER
+            ),
+            Skill(
+                name="Flask", type=SkillType.FRAMEWORK, level=SkillLevel.INTERMEDIATE
+            ),
             Skill(name="CNN", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
-            Skill(name="Deep Learning", type=SkillType.TECHNOLOGY, level=SkillLevel.BEGINNER),
+            Skill(
+                name="Deep Learning",
+                type=SkillType.TECHNOLOGY,
+                level=SkillLevel.BEGINNER,
+            ),
             Skill(name="Pytest", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
-            Skill(name="System Design", type=SkillType.CONCEPT, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Multiprocessing", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE),
+            Skill(
+                name="System Design",
+                type=SkillType.CONCEPT,
+                level=SkillLevel.INTERMEDIATE,
+            ),
+            Skill(
+                name="Multiprocessing",
+                type=SkillType.TECHNOLOGY,
+                level=SkillLevel.INTERMEDIATE,
+            ),
             Skill(name="Sentry", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
             Skill(name="Codecov", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
-            Skill(name="Python-Typing", type=SkillType.CONCEPT, level=SkillLevel.BEGINNER),
-            Skill(name="Data Structures & Algorithms", type=SkillType.CONCEPT, level=SkillLevel.ADVANCED),
-            Skill(name="OOPs Concepts", type=SkillType.CONCEPT, level=SkillLevel.EXPERT),
-            Skill(name="Design Patterns", type=SkillType.CONCEPT, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Agile", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Scrum", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Unit Testing", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Integration Testing", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Repository Testing", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Multithreading", type=SkillType.CONCEPT, level=SkillLevel.BEGINNER),
-            Skill(name="JRXML", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="CI/CD", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE),
-            Skill(name="Github Workflows", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
+            Skill(
+                name="Python-Typing", type=SkillType.CONCEPT, level=SkillLevel.BEGINNER
+            ),
+            Skill(
+                name="Data Structures & Algorithms",
+                type=SkillType.CONCEPT,
+                level=SkillLevel.ADVANCED,
+            ),
+            Skill(
+                name="OOPs Concepts", type=SkillType.CONCEPT, level=SkillLevel.EXPERT
+            ),
+            Skill(
+                name="Design Patterns",
+                type=SkillType.CONCEPT,
+                level=SkillLevel.INTERMEDIATE,
+            ),
+            Skill(
+                name="Agile", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE
+            ),
+            Skill(
+                name="Scrum", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE
+            ),
+            Skill(
+                name="Unit Testing",
+                type=SkillType.METHODOLOGY,
+                level=SkillLevel.INTERMEDIATE,
+            ),
+            Skill(
+                name="Integration Testing",
+                type=SkillType.METHODOLOGY,
+                level=SkillLevel.INTERMEDIATE,
+            ),
+            Skill(
+                name="Repository Testing",
+                type=SkillType.METHODOLOGY,
+                level=SkillLevel.INTERMEDIATE,
+            ),
+            Skill(
+                name="Multithreading", type=SkillType.CONCEPT, level=SkillLevel.BEGINNER
+            ),
+            Skill(
+                name="JRXML", type=SkillType.TECHNOLOGY, level=SkillLevel.INTERMEDIATE
+            ),
+            Skill(
+                name="CI/CD", type=SkillType.METHODOLOGY, level=SkillLevel.INTERMEDIATE
+            ),
+            Skill(
+                name="Github Workflows",
+                type=SkillType.TOOL,
+                level=SkillLevel.INTERMEDIATE,
+            ),
             Skill(name="Linux", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
             Skill(name="VS Code", type=SkillType.TOOL, level=SkillLevel.EXPERT),
             Skill(name="Eclipse", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
-            Skill(name="Android Studio", type=SkillType.TOOL, level=SkillLevel.BEGINNER),
+            Skill(
+                name="Android Studio", type=SkillType.TOOL, level=SkillLevel.BEGINNER
+            ),
             Skill(name="Postman", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
             Skill(name="DBeaver", type=SkillType.TOOL, level=SkillLevel.INTERMEDIATE),
             Skill(name="C#", type=SkillType.LANGUAGE, level=SkillLevel.BEGINNER),
-            Skill(name="HTML/CSS", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED),
+            Skill(
+                name="HTML/CSS", type=SkillType.TECHNOLOGY, level=SkillLevel.ADVANCED
+            ),
             Skill(name="ReactJS", type=SkillType.FRAMEWORK, level=SkillLevel.BEGINNER),
             Skill(name="GitHub", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
         ]
-
 
         return sort_skills_by_level(_skills)
 
