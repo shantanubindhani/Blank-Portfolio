@@ -10,8 +10,28 @@ dependencies = [
     "dataclasses>=0.8",
     "flake8>=7.3.0",
     "pytest>=9.0.1",
+    "pytest-cov>=7.0.0",
     "rich>=14.2.0",
     "setuptools>=80.9.0",
     "tox>=4.32.0",
     "wheel>=0.45.1",
 ]
+
+[tool.black]
+line-length = 88 
+# Include only files that are inside the 'black_portfolio' OR 'tests' directories
+include = 'black_portfolio/|tests/'
+# It is also helpful to explicitly exclude common folders you don't want formatted
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.venv
+  | \.pytest_cache
+  | __pycache__
+  | _build
+  | build
+  | dist
+)/
+'''
