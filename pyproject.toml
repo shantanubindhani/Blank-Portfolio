@@ -19,8 +19,8 @@ dependencies = [
 
 [tool.black]
 line-length = 88 
-# Include only files that are inside the 'black_portfolio' OR 'tests' directories
-include = 'black_portfolio/|tests/'
+# Include only files that are inside the 'blank_portfolio' OR 'tests' directories
+include = 'blank_portfolio/|tests/'
 # It is also helpful to explicitly exclude common folders you don't want formatted
 exclude = '''
 /(

@@ -1,6 +1,6 @@
 import pytest
 from datetime import date
-from black_portfolio.data_models import (
+from blank_portfolio.data_models import (
     Link,
     Contact,
     Grade,

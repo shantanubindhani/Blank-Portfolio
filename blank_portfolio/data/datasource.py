@@ -1,7 +1,7 @@
 from datetime import date
 from typing import List
-from black_portfolio.data_models import *
-from black_portfolio.utils import sort_skills_by_level
+from blank_portfolio.data_models import *
+from blank_portfolio.utils import sort_skills_by_level
 
 
 class DataSource_provider:

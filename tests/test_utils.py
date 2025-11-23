@@ -2,8 +2,8 @@
 
 import pytest
 from typing import List, Optional
-from black_portfolio.data_models import Skill, SkillLevel, SkillType
-from black_portfolio.utils import sort_skills_by_level, filter_skills
+from blank_portfolio.data_models import Skill, SkillLevel, SkillType
+from blank_portfolio.utils import sort_skills_by_level, filter_skills
 from tests.test_data import sample_skills
 
 

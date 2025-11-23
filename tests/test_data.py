@@ -1,6 +1,6 @@
 import pytest
 from typing import List
-from black_portfolio.data_models import Skill, SkillLevel, SkillType
+from blank_portfolio.data_models import Skill, SkillLevel, SkillType
 
 
 @pytest.fixture

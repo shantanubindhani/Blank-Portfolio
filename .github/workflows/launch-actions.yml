@@ -22,8 +22,8 @@ jobs:
           uv sync
       
       - name: Running tests
-        run: uv run pytest --cov=black_portfolio --cov-report=term-missing .\tests\
+        run: uv run pytest --cov=blank_portfolio --cov-report=term-missing tests/
 
       - name: Check code formatting with Black
         run: |
-          uv run black --check --diff black_portfolio/ tests/
+          uv run black --check --diff blank_portfolio/ tests/
