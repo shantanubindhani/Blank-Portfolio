@@ -2,9 +2,9 @@
 
 import pytest
 from typing import List, Optional
-from blank_portfolio.data_models import Skill, SkillLevel, SkillType
-from blank_portfolio.utils import sort_skills_by_level, filter_skills
-from tests.test_data import sample_skills
+from blank_portfolio.models.data_models import Skill, SkillLevel, SkillType
+from blank_portfolio.utils.data_utils import sort_skills_by_level, filter_skills
+from tests.test_data.test_data import sample_skills
 
 
 def test_should_sort_skills_by_level_correctly(sample_skills):

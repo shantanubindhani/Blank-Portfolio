@@ -1,4 +1,4 @@
-from blank_portfolio.data_models import Skill, SkillLevel
+from blank_portfolio.models.data_models import Skill, SkillLevel
 from typing import List
 
 
