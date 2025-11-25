@@ -20,9 +20,9 @@ class DataSource_provider:
         _name = "Shantanu Bindhani"
         _role = "SDE / Backend Developer / Software Engineer"
         _bio = [
-            "Aspiring Software Developer from Balasore, Orissa, India.",
-            "Experienced in backend development, microservices, and Android development.",
-            "Skilled in Python, Java, Kotlin, and fastAPI among other technologies.",
+            "Hi, I am Software Developer from hailing from Balasore, Orissa, India.",
+            "I am Experienced in backend development, microservices, \n  and also knowledgeable about Web, Game, Android, software development.",
+            "Some of my strongest holds are on python, java, c++, and other technologies related to them.\n you can skim through my portfolio to learn more about them.",
         ]
         _links = self.get_links()
         _contacts = self.get_contacts()
@@ -64,30 +64,41 @@ class DataSource_provider:
             Experience(
                 role="Backend SDE Intern",
                 company="Datachecks, Bangalore",
+                mode=JobMode.REMOTE,
                 start_date=date(2024, 11, 1),
                 end_date=date(2025, 4, 30),
                 responsibilities=[
-                    "Created and improved various features and integrations using python, fastAPI, SQL Alchemy, Celery, PostgreSQL.",
-                    "Wrote Unit tests, Integration and Repository tests using Pytest.",
-                    "Used singleton architecture, dependency injections, and system design to improve efficiency and load times.",
-                    "Maintained API health and test coverage using sentry and codecov.",
-                    "Collaborated with a small qualified team on end-to-end feature development.",
+                    "Spearheaded the development and enhancement of multiple features and system integrations using a modern Python tech stack, specifically leveraging FastAPI for high-performance API creation, SQL Alchemy for robust ORM, and Celery for efficient asynchronous task processing, all connected to a PostgreSQL database.",
+                    "Ensured code reliability and functional correctness by comprehensively designing and writing automated tests at multiple levels, including Unit tests, Integration, and Repository tests, utilizing the Pytest framework to maintain a high standard of quality assurance.",
+                    "Applied advanced software engineering principles and system design patterns, such as the Singleton Architecture and Dependency Injection, to optimize code structure and application flow, directly resulting in significant improvements to overall efficiency and reduced load times.",
+                    "Actively monitored and maintained the stability and reliability of the deployed APIs and application services; specifically utilized Sentry for real-time error tracking and alerting, and leveraged Codecov to track and enforce high API test coverage metrics.",
+                    "Engaged in end-to-end feature development within a small, highly collaborative and qualified team, taking ownership from conceptual design through deployment, and facilitating efficient knowledge sharing and code review processes to ensure alignment with project goals and delivery timelines.",
                 ],
                 learnings=[
-                    "Advanced backend design patterns and testing for scalable APIs."
+                    "Learned to build and deploy high-performance Python APIs, mastering the FastAPI, SQL Alchemy, and Celery stack with PostgreSQL.",
+                    "Gained expertise in test-driven development, mastering the creation of Unit, Integration, and Repository tests using the Pytest framework.",
+                    "Acquired practical skills in application monitoring and quality assurance using Sentry for real-time tracking and Codecov for test coverage enforcement.",
+                    "Mastered the application of advanced design patterns (Singleton Architecture, Dependency Injection) to optimize code for efficiency and reduced load times.",
                 ],
             ),
             Experience(
                 role="Software Development Engineer Intern",
                 company="Ciright Inc., Ahmedabad",
+                mode=JobMode.ONSITE,
                 start_date=date(2023, 1, 1),
                 end_date=date(2023, 6, 30),
                 responsibilities=[
-                    "Developed and maintained 30+ business verticals for Ciright.com & Veuit.com using Java and Microservices.",
-                    "Implemented JRXML, Spring Boot 3, and multithreading improving system efficiency by 20%.",
+                    "Developed and maintained 30+ business verticals for platforms like Ciright.com and Veuit.com, utilizing a Java Microservices architecture for scalable back-end development.",
+                    "Drove significant system efficiency and modernization by implementing Spring Boot 3 and leveraging multithreading techniques, resulting in a 20% overall performance improvement.",
+                    "Handled the entire data and presentation layer, implementing the Hibernate ORM with H2DB for data persistence and integrating back-end services with the UI built using JSP (Java Full Stack).",
+                    "Designed and enforced core application structure by utilizing the Spring framework and applying industry-standard patterns like the Java Singleton Architecture for resource management.",
+                    "Contributed to specialized technical requirements, including complex report generation using JRXML and the implementation of security components using C++ (STL) and cryptography principles.",
                 ],
                 learnings=[
-                    "Experience with large scale Java microservices and report generation."
+                    "Learned to develop and scale enterprise applications by applying Java Microservices architecture with Spring and Spring Boot.",
+                    "Gained critical knowledge in performance tuning, specifically how to achieve 20% system efficiency gains using multithreading and modern Spring Boot 3 features.",
+                    "Acquired full-stack proficiency, learning to manage data persistence with Hibernate and H2DB, and integrating the back-end with the JSP view layer.",
+                    "Developed foundational versatility by learning specialized tools like JRXML for reporting and implementing low-level concepts using C++ (STL) and cryptography.",
                 ],
             ),
         ]
@@ -272,7 +283,7 @@ class DataSource_provider:
             Skill(name="GitHub", type=SkillType.TOOL, level=SkillLevel.ADVANCED),
         ]
 
-        return sort_skills_by_level(_skills)
+        return _skills
 
     def get_certifications(self) -> List[Certification]:
         return [

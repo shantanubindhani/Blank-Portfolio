@@ -1,5 +1,8 @@
+from blank_portfolio.provider.cli import cli
+
 def main():
-    print("Hello from blank-portfolio!")
+    cli()
+    # run_formatter_demo()
 
 
 if __name__ == "__main__":
