@@ -11,11 +11,11 @@ def test_should_sort_skills_by_level_correctly(sample_skills):
     sorted_skills = sort_skills_by_level(sample_skills)
     levels = [skill.level for skill in sorted_skills]
     expected_levels = [
-        SkillLevel.EXPERT,
-        SkillLevel.EXPERT,
-        SkillLevel.ADVANCED,
-        SkillLevel.INTERMEDIATE,
         SkillLevel.BEGINNER,
+        SkillLevel.INTERMEDIATE,
+        SkillLevel.ADVANCED,
+        SkillLevel.EXPERT,
+        SkillLevel.EXPERT,
     ]
     assert levels == expected_levels
 

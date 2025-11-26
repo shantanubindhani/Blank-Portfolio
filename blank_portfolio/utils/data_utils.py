@@ -3,15 +3,8 @@ from typing import List, Literal
 
 
 def sort_skills_by_level(skills: List[Skill]) -> List[Skill]:
-    level_priority = {
-        SkillLevel.EXPERT: 0,
-        SkillLevel.ADVANCED: 1,
-        SkillLevel.INTERMEDIATE: 2,
-        SkillLevel.BEGINNER: 3,
-        None: 4,
-    }
-
-    skills_sorted = sorted(skills, key=lambda s: level_priority.get(s.level, 4))
+    
+    skills_sorted = sorted(skills, key=lambda s: s.level.value)
     return skills_sorted
 
 

@@ -1,7 +1,6 @@
 from typing import List
 from blank_portfolio.models.data_models import *
 from blank_portfolio.utils.data_utils import sort_skills_by_level, filter_skills
-from blank_portfolio.utils.formatter_utils import *
 from blank_portfolio.data.datasource import DataSource_provider
 
 
@@ -34,7 +33,7 @@ class CLIService:
         sort: str = None,
     ) -> List[Skill]:
         _skills = self._portfolio.skills
-        if sort == "aesc":
+        if sort == "asc":
             _skills = self.get_skills_sorted_by_level()[::-1]
         elif sort == "desc":
             _skills = self.get_skills_sorted_by_level()

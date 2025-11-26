@@ -196,7 +196,7 @@ def print_skills(
     skill_name: List[str] = None,
     skill_type: List[str] = None,
     skill_level: List[str] = None,
-    sort: Literal["aesc", "desc", None] = None,
+    sort: Literal["asc", "desc", None] = None,
 ):
     skills = cli_service.get_skills_filtered(
         skill_names=skill_name,

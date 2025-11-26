@@ -19,10 +19,10 @@ class ContactType(Enum):
 
 
 class SkillLevel(Enum):
-    BEGINNER = "BEGINNER"
-    INTERMEDIATE = "INTERMEDIATE"
-    ADVANCED = "ADVANCED"
-    EXPERT = "EXPERT"
+    BEGINNER = 1
+    INTERMEDIATE = 2
+    ADVANCED = 3
+    EXPERT = 4
 
 
 class SkillType(Enum):
