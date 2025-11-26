@@ -3,7 +3,7 @@ from typing import List, Literal
 
 
 def sort_skills_by_level(skills: List[Skill]) -> List[Skill]:
-    
+
     skills_sorted = sorted(skills, key=lambda s: s.level.value)
     return skills_sorted
 

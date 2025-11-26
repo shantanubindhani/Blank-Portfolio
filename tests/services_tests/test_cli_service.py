@@ -39,23 +39,37 @@ def test_get_skills_sorted_by_level(cli_service):
 
 
 def test_get_skills_filtered_name(cli_service):
-    filtered = cli_service.get_skills_filtered(skill_names=["Python"], skill_types=None, skill_levels=None)
+    filtered = cli_service.get_skills_filtered(
+        skill_names=["Python"], skill_types=None, skill_levels=None
+    )
     assert all("Python".lower() in s.name.lower() for s in filtered)
 
+
 def test_get_skills_filtered_type(cli_service):
-    filtered = cli_service.get_skills_filtered(skill_names=None, skill_types=[SkillType.TOOL.name], skill_levels=None)
+    filtered = cli_service.get_skills_filtered(
+        skill_names=None, skill_types=[SkillType.TOOL.name], skill_levels=None
+    )
     assert all(s.type.name == SkillType.TOOL.name for s in filtered)
 
+
 def test_get_skills_filtered_level(cli_service):
-    filtered = cli_service.get_skills_filtered(skill_names=None, skill_types=None, skill_levels=[SkillLevel.EXPERT.name])
+    filtered = cli_service.get_skills_filtered(
+        skill_names=None, skill_types=None, skill_levels=[SkillLevel.EXPERT.name]
+    )
     assert all(s.level.name == SkillLevel.EXPERT.name for s in filtered)
 
+
 def test_get_skills_filtered_sort_asc(cli_service):
-    filtered = cli_service.get_skills_filtered(skill_names=None, skill_types=None, skill_levels=None, sort="asc")
+    filtered = cli_service.get_skills_filtered(
+        skill_names=None, skill_types=None, skill_levels=None, sort="asc"
+    )
     levels = [s.level for s in filtered]
     assert all(levels[i].value >= levels[i + 1].value for i in range(len(levels) - 1))
 
+
 def test_get_skills_filtered_sort_desc(cli_service):
-    filtered = cli_service.get_skills_filtered(skill_names=None, skill_types=None, skill_levels=None, sort="desc")
+    filtered = cli_service.get_skills_filtered(
+        skill_names=None, skill_types=None, skill_levels=None, sort="desc"
+    )
     levels = [s.level for s in filtered]
     assert all(levels[i].value <= levels[i + 1].value for i in range(len(levels) - 1))
