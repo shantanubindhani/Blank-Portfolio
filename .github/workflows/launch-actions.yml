@@ -26,7 +26,7 @@ jobs:
 
       - name: Checking code format...
         run: |
-          uv run black --check --diff blank_portfolio/ tests/
+          uv run black --config pyproject-black.toml --check --diff blank_portfolio/ tests/
       
       - name: Bumping patch version...
         run: uv run bump2version patch --config-file .bumpversion.cfg --allow-dirty --verbose

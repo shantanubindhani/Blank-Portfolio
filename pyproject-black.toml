@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 88 
+# Include only files that are inside the 'blank_portfolio' OR 'tests' directories
+include = 'blank_portfolio/|tests/'
+# It is also helpful to explicitly exclude common folders you don't want formatted
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.venv
+  | \.pytest_cache
+  | __pycache__
+  | _build
+  | build
+  | dist
+)/
+'''
