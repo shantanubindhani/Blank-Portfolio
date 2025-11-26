@@ -18,3 +18,8 @@ dependencies = [
     "wheel>=0.45.1",
 ]
 
+license = { file = "LICENSE" }
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  # other classifiers as needed
+]
