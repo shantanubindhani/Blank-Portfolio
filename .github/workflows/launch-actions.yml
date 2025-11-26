@@ -21,9 +21,22 @@ jobs:
           pip install uv
           uv sync
       
-      - name: Running tests
+      - name: Running tests...
         run: uv run pytest --cov=blank_portfolio --cov-report=term-missing tests/
 
-      - name: Check code formatting with Black
+      - name: Checking code format...
         run: |
           uv run black --check --diff blank_portfolio/ tests/
+      
+      - name: Bumping patch version...
+        run: uv run bump2version patch --config-file .bumpversion.cfg --allow-dirty --verbose
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
+
+      - name: Pushing version bump commit and tag
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
