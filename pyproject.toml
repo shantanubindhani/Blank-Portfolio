@@ -17,9 +17,12 @@ dependencies = [
     "tox>=4.32.0",
     "wheel>=0.45.1",
 ]
-
 license = { file = "LICENSE" }
 classifiers = [
   "License :: OSI Approved :: Apache Software License",
   # other classifiers as needed
 ]
+
+[project.scripts]
+blank-portfolio = "blank_portfolio.provider.cli:cli"
+
